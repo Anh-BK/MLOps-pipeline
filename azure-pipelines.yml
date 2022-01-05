@@ -27,8 +27,9 @@ steps:
     workingDirectory: 'environment_setup'
 
 - script: | 
-   az login --service-principal -u $(spidentity) -p $(spsecret) --tenant $(sptenant)
-   
+   #az login --service-principal -u $(spidentity) -p $(spsecret) --tenant $(sptenant)
+   az login
+
   displayName: 'Login to Azure'
 
 - script: |

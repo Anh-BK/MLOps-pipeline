@@ -19,16 +19,18 @@ steps:
     versionSpec: '3.6'
     architecture: 'x64'   
 
+- script: |
+    echo $(spidentity)
+    echo $(spsecret)
+    echo $(sptenant)
+  displayName: "Debug env var"
+
 - task: Bash@3
   displayName: 'Install Requirements'
   inputs:
     targetType: filePath
     filePath: 'environment_setup/install_requirements.sh'
     workingDirectory: 'environment_setup'
-
-- script: |
-    echo "$spidentity $spsecret $sptenant"
-  displayName: "Debug env var"
 
 - script: | 
    az login --service-principal -u $(spidentity) -p $(spsecret) --tenant $(sptenant)

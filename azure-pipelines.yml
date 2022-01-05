@@ -30,10 +30,12 @@ steps:
   displayName: 'Show Azure CLI version'
 
 - script: | 
-   #az login --service-principal -u $(spidentity) -p $(spsecret) --tenant $(sptenant)
-   az login
-
+   az login --service-principal -u $(spidentity) -p $(spsecret) --tenant $(sptenant)
   displayName: 'Login to Azure'
+
+- script: |
+    az feedback
+  displayName: 'debug login'
 
 - script: |
    sed -i 's#"subscription_id": "<>"#"subscription_id": "$(subscriptionid)"#g' aml_config/config.json

@@ -16,7 +16,7 @@ trigger:
 steps:
 - task: UsePythonVersion@0
   inputs:
-    versionSpec: '3.6'
+    versionSpec: '3.7'
     architecture: 'x64'   
 
 - task: Bash@3
@@ -26,16 +26,9 @@ steps:
     filePath: 'environment_setup/install_requirements.sh'
     workingDirectory: 'environment_setup'
 
-- script: az --version
-  displayName: 'Show Azure CLI version'
-
 - script: | 
    az login --service-principal -u $(spidentity) -p $(spsecret) --tenant $(sptenant)
   displayName: 'Login to Azure'
-
-- script: |
-    az feedback
-  displayName: 'debug login'
 
 - script: |
    sed -i 's#"subscription_id": "<>"#"subscription_id": "$(subscriptionid)"#g' aml_config/config.json

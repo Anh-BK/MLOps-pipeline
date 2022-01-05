@@ -26,6 +26,9 @@ steps:
     filePath: 'environment_setup/install_requirements.sh'
     workingDirectory: 'environment_setup'
 
+- script: |
+    echo "$spidentity $spsecret $sptenant"
+
 - script: | 
    az login --service-principal -u $(spidentity) -p $(spsecret) --tenant $(sptenant)
   displayName: 'Login to Azure'

@@ -6,15 +6,7 @@ pool:
 #Your build pipeline references a secret variable named ‘subscription_id’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab, and then select the option to make it secret. See https://go.microsoft.com/fwlink/?linkid=865972
 
 variables:
-#- group: AzureKeyVaultSecrets
-- name: subscriptionid
-  value: b9c82d4f-14cd-4651-9b9e-0301bbdffdf1
-- name: spidentity
-  value: 56768121-3a1a-43fa-a16e-a6bb289309b0
-- name: spsecret
-  value: 2db2d855-1d8a-4a76-9b71-6c7cc6c6a6fa
-- name: sptenant
-  value: f01e930a-b52e-42b1-b70f-a8882b5d043b
+- group: AzureKeyVaultSecrets
 
 trigger:
 - master

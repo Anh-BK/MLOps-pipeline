@@ -32,6 +32,10 @@ steps:
     filePath: 'environment_setup/install_requirements.sh'
     workingDirectory: 'environment_setup'
 
+- script: |
+    az extension update --name interactive
+  displayName: 'update extension'
+  
 - script: | 
    az login --service-principal -u $(spidentity) -p $(spsecret) --tenant $(sptenant)
   displayName: 'Login to Azure'

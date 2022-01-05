@@ -10,9 +10,9 @@ variables:
 - name: subscriptionid
   value: b9c82d4f-14cd-4651-9b9e-0301bbdffdf1
 - name: spidentity
-  value: 450d12fe-c600-44ef-a88b-c7390f51b3dd
+  value: 56768121-3a1a-43fa-a16e-a6bb289309b0
 - name: spsecret
-  value: vJU7Q~KsVSZmKdnrNU1g4H7ASPj0eMUNKNT8w
+  value: 4EJ7Q~0NzSKkyHN6EnRa7-ars4Co-liW38Ufo
 - name: sptenant
   value: f01e930a-b52e-42b1-b70f-a8882b5d043b
 
